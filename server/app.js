@@ -1,4 +1,6 @@
 // *** main dependencies *** //
+var dotenv = require('dotenv');
+dotenv.load();
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -10,6 +12,7 @@ var swig = require('swig');
 
 // *** routes *** //
 var routes = require('./routes/index.js');
+var songs = require('./routes/api.js');
 
 
 // *** express instance *** //
@@ -36,6 +39,7 @@ app.use(express.static(path.join(__dirname, '../client/public')));
 
 // *** main routes *** //
 app.use('/', routes);
+app.use('/api/', songs);
 
 
 // catch 404 and forward to error handler
@@ -44,6 +48,8 @@ app.use(function(req, res, next) {
   err.status = 404;
   next(err);
 });
+
+
 
 
 // *** error handlers *** //
