@@ -3,11 +3,11 @@ var Schema = mongoose.Schema;
 
 var Song = new Schema({
     songTitle: String,
-    SongLength: Number,
+    songLength: Number,
     composer: String,
     billboard100: Boolean
 });
 
-mongoose.connect(process.envMONGO_URI || 'mongodb://localhost/songs');
+mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost/songs');
 
 module.exports = mongoose.model("songs", Song);

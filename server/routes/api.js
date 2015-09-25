@@ -4,11 +4,19 @@ var Song = require('../models/beatles.js');
 
 
 // GET ALL
+router.get('/songs', function(req, res, next){
+  Song.findQ()
+    .then(function(result){res.json(result)})
+    .fail(function(err){res.send(err)})
+    .done();
+});
+
 
 // GET ONE
 
 // POST ONE
-router.post('/songs', function(req, res, next){
+router.post('/song', function(req, res, next){
+  console.log(req.body)
   new Song ({
     songTitle: req.body.songTitle,
     songLength: req.body.songLength,
@@ -24,8 +32,5 @@ router.post('/songs', function(req, res, next){
 // UPDATE ONE
 
 // DELETE ONE
-
-
-
 
 module.exports = router;
