@@ -13,6 +13,12 @@ router.get('/songs', function(req, res, next){
 
 
 // GET ONE
+router.get('songs/:id', function(req, res, next){
+  Song.findByIdQ(req.params.id)
+    .then(function(result){res.json(result)})
+    .fail(function(err){res.send(err)})
+    .done();
+});
 
 // POST ONE
 router.post('/song', function(req, res, next){
@@ -30,7 +36,19 @@ router.post('/song', function(req, res, next){
 });
 
 // UPDATE ONE
+router.put('/song/:id', function(res, req, next){
+  Song.findByIdAndUpdateQ(req.params.id, req.body)
+    .then(function(result){res.json(result)})
+    .fail(function(err){res.send(err)})
+    .done();
+});
 
 // DELETE ONE
+router.delete('/song/:id', function(req, res, next){
+  Song.findByIdAndRemoveQ(req.params.id)
+    .then(function(result){res.json(result)})
+    .fail(function(err){res.send(err)})
+    .done();
+});
 
 module.exports = router;
