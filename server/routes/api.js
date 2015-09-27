@@ -13,7 +13,7 @@ router.get('/songs', function(req, res, next){
 
 
 // GET ONE
-router.get('songs/:id', function(req, res, next){
+router.get('song/:id', function(req, res, next){
   Song.findByIdQ(req.params.id)
     .then(function(result){res.json(result)})
     .fail(function(err){res.send(err)})
@@ -21,7 +21,7 @@ router.get('songs/:id', function(req, res, next){
 });
 
 // POST ONE
-router.post('/song', function(req, res, next){
+router.post('/songs', function(req, res, next){
   console.log(req.body)
   new Song ({
     songTitle: req.body.songTitle,
