@@ -24,15 +24,18 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../client/public')));
-
+console.log(__dirname);
 
 // *** static directory *** //
 app.set('views', path.join(__dirname, 'views'));
 
 
 // *** main routes *** //
-app.use('/', routes);
+// app.use('/', routes);
 app.use('/api/', songs);
+app.use('/',function(req,res){
+  res.sendFile(path.join(__dirname,'../client/views','index.html'));
+});
 
 
 // catch 404 and forward to error handler

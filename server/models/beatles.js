@@ -5,8 +5,8 @@ var Song = new Schema({
     songTitle: String,
     songLength: Number,
     composer: String,
-    leadVocals: String,
-    billboard100: Boolean
+    leadVocals: String,     // ADD
+    billboard100: Boolean  // REMOVE
 });
 
 mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost/songs');
