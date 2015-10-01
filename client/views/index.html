@@ -11,8 +11,6 @@
   <body>
   <!-- Same name that's in controllers.js -->
   <div ng-controller="songController" class="container">      <!-- Where does the closing tag go? -->
-<input ng-model="test">
-{{test}}
 
   <form>
   <h2>Enter a song to add to the collection</h2>
@@ -61,8 +59,7 @@
             <button ng-click="deleteSong(song._id)" class='btn btn-danger'><span
 <!-- (song._id is a great efficient way to do this because when you create a new song, the database assigns each one with an underscore id (_id)) -->
 
-
-            class='glyphicon glyphicon-remove'></span></button>
+         <span class='glyphicon glyphicon-remove'></span></button>
             </td>
         </tr>
       </tbody>
