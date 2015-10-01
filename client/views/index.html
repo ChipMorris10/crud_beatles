@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <title>The Beatles</title>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/main.css">
+  </head>
+  <body>
+
+  <form>
+  <h2>Enter a song to add to the collection</h2>
+  <div class="form-group">
+    <label for="songTitle">Song Title</label>
+    <input type="text" class="form-control" id="songTitle" placeholder="Song Title">
+  </div>
+  <div class="form-group">
+    <label for="composer">Composer</label>
+    <input type="text" class="form-control" id="composer" placeholder="Composer (ex:Lennon/McCartney)">
+  </div>
+  <div class="form-group">
+    <label for="songLength">Song Length</label>
+    <input type="number" class="form-control" id="songLength" placeholder="Song Length">
+  </div>
+  <div class="form-group">
+    <label for="billboard100">Billboard 100</label>
+    <input type="checkbox"> <br> Check if yes
+  </div>
+  <p>Once your changes have been made, click the submit button</p>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+
+    <script type="text/javascript" src="/code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="/js/main.js"></script>
+  </body>
+</html>
+
+<!-- NEXT STEPS -->
+<!-- show all records res.render the data -->
+<!-- edit and delete songs -->

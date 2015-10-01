@@ -22,7 +22,7 @@ router.get('song/:id', function(req, res, next){
 
 // POST ONE
 router.post('/songs', function(req, res, next){
-  console.log(req.body)
+  // console.log(req.body)
   new Song ({
     songTitle: req.body.songTitle,
     songLength: req.body.songLength,
@@ -36,7 +36,7 @@ router.post('/songs', function(req, res, next){
 });
 
 // UPDATE ONE
-router.put('/song/:id', function(res, req, next){
+router.put('/song/:id', function(req, res, next){
   Song.findByIdAndUpdateQ(req.params.id, req.body)
     .then(function(result){res.json(result)})
     .fail(function(err){res.send(err)})

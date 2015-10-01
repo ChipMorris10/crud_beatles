@@ -5,6 +5,7 @@ var Song = new Schema({
     songTitle: String,
     songLength: Number,
     composer: String,
+    leadVocals: String,
     billboard100: Boolean
 });
 
