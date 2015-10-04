@@ -3,6 +3,9 @@ var router = express.Router();
 var Song = require('../models/beatles.js');
 
 
+var itunes = require('itunesapi');
+
+
 // Get all
 router.get('/songs', function(req, res, next){
   Song.findQ()
@@ -13,7 +16,7 @@ router.get('/songs', function(req, res, next){
 
 
 // Get one
-router.get('song/:id', function(req, res, next){
+router.get('/song/:id', function(req, res, next){
   Song.findByIdQ(req.params.id)
     .then(function(result){res.json(result)})
     .fail(function(err){res.send(err)})
