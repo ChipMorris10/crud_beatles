@@ -7,6 +7,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+// var services = require('./js/services');
 
 
 // *** routes *** //
@@ -23,19 +24,27 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, '../client/public')));
 console.log(__dirname);
 
-// *** static directory *** //
-app.set('views', path.join(__dirname, 'views'));
+app.use(express.static(path.join(__dirname, '../client/public')));
 
+///view engine
+app.set('view engine', 'html');
+
+
+// *** static directory *** //
+ app.set('views', path.join(__dirname, '../client/views'));
+
+app.get('/',function(req,res){
+  res.sendFile(path.join(__dirname,'../client/views','index.html'));
+});
 
 // *** main routes *** //
 // app.use('/', routes);
 app.use('/api/', songs);
-app.use('/',function(req,res){
-  res.sendFile(path.join(__dirname,'../client/views','index.html'));
-});
+// app.post('/api/songs', services.postSong);
+
+
 
 
 // catch 404 and forward to error handler

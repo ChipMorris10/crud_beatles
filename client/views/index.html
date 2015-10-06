@@ -3,41 +3,55 @@
 <html ng-app="myApp">
   <head>
     <meta charset="utf-8">
-    <title>The Beatles</title>
+    <title>The Beatles Song Catalog - Official and Otherwise</title>
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="../public/css/main.css">
 
   </head>
   <body>
   <!-- Same name that's in controllers.js -->
-  <div ng-controller="songController" class="container">      <!-- Where does the closing tag go? -->
 
+  <!-- *********************************** -->
+  <!-- does this go in the div or body tag -->
+  <!-- *********************************** -->
+
+  <div ng-controller="songController" class="container">
+
+  <!-- *********************************** -->
+  <!-- Where does the closing tag go? -->
+  <!-- *********************************** -->
+
+  <!-- Enter a New Song -->
   <form>
   <h2>Enter a song to add to the collection</h2>
   <div class="form-group">
     <label for="songTitle">Song Title</label>
-    <input type="text" class="form-control" id="songTitle" placeholder="Song Title">
+
+    <input type="text" ng-model="song.songTitle" class="form-control" id="songTitle" placeholder="Song Title" required>
   </div>
+
   <div class="form-group">
     <label for="composer">Composer</label>
-    <input type="text" class="form-control" id="composer" placeholder="Composer (ex:Lennon/McCartney)">
+    <input type="text" ng-model="song.composer" class="form-control" id="composer" placeholder="Composer (ex:JL/PM)" required>
   </div>
+
   <div class="form-group">
     <label for="songLength">Song Length</label>
-    <input type="number" class="form-control" id="songLength" placeholder="Song Length">
+    <input type="number" ng-model="song.songLength" class="form-control" id="songLength" placeholder="Song Length" required>
   </div>
+
   <div class="form-group">
     <label for="billboard100">Billboard 100</label>
-    <input type="checkbox"> <br> Check if yes
+    <input type="checkbox" ng-model="song.billboard100">  <br> Check if yes
   </div>
+
   <p>Once your changes have been made, click the submit button</p>
-  <button type="submit" class="btn btn-default">Submit</button>
-</form>
+  <button type="submit" ng-click="postSong()" class="btn btn-default">Submit</button>
+</form>  <!-- Closes the Enter a new song section -->
 
 
 
 <div class="message-section">
-    <p class="alert alert-info" role="alert" id="message"></p>
   </div>
   <div class="song-section">
     <h2 class="text-center"></h2>
@@ -100,9 +114,9 @@
 
 
 <!-- NEXT STEPS -->
-<!-- show all records res.render the data -->
 <!-- edit and delete songs -->
 
+
+
 <!-- QUESTIONS -->
-<!-- Talk about the script files in index.html. Specifically, their placement and file path -->
 <!-- I want to make a change in my Schema -->

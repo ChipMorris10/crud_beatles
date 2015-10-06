@@ -3,7 +3,7 @@ var router = express.Router();
 var Song = require('../models/beatles.js');
 
 
-// GET ALL
+// Get all
 router.get('/songs', function(req, res, next){
   Song.findQ()
     .then(function(result){res.json(result)})
@@ -12,7 +12,7 @@ router.get('/songs', function(req, res, next){
 });
 
 
-// GET ONE
+// Get one
 router.get('song/:id', function(req, res, next){
   Song.findByIdQ(req.params.id)
     .then(function(result){res.json(result)})
@@ -20,9 +20,9 @@ router.get('song/:id', function(req, res, next){
     .done();
 });
 
-// POST ONE
+// Post one
 router.post('/songs', function(req, res, next){
-  // console.log(req.body)
+  console.log("Req.body",req)
   new Song ({
     songTitle: req.body.songTitle,
     songLength: req.body.songLength,
@@ -35,7 +35,7 @@ router.post('/songs', function(req, res, next){
     .done();
 });
 
-// UPDATE ONE
+// Update one
 router.put('/song/:id', function(req, res, next){
   Song.findByIdAndUpdateQ(req.params.id, req.body)
     .then(function(result){res.json(result)})
@@ -43,7 +43,7 @@ router.put('/song/:id', function(req, res, next){
     .done();
 });
 
-// DELETE ONE
+// Delete one
 router.delete('/song/:id', function(req, res, next){
   Song.findByIdAndRemoveQ(req.params.id)
     .then(function(result){res.json(result)})
