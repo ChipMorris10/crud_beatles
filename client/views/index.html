@@ -1,110 +1,28 @@
 <!DOCTYPE html>
-<!-- This points to app.js on the Client side -->
-<html ng-app="myApp">
+<html ng-app="mealGenerator">
   <head>
     <meta charset="utf-8">
-    <title>The Beatles Song Catalog - Official and Otherwise</title>
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../public/css/main.css">
-
+    <title>The Beatles Song Catalog</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/css/main.css">
   </head>
-  <body>
-  <!-- Same name that's in controllers.js -->
-
-  <!-- *********************************** -->
-  <!-- does this go in the div or body tag -->
-  <!-- *********************************** -->
-
-  <div ng-controller="songController" class="container">
-
-  <!-- *********************************** -->
-  <!-- Where does the closing tag go? -->
-  <!-- *********************************** -->
-
-  <!-- Enter a New Song -->
-  <form>
-  <h2>Enter a song to add to the collection</h2>
-  <div class="form-group">
-    <label for="songTitle">Song Title</label>
-
-    <input type="text" ng-model="song.songTitle" class="form-control" id="songTitle" placeholder="Song Title" required>
-  </div>
-
-  <div class="form-group">
-    <label for="composer">Composer</label>
-    <input type="text" ng-model="song.composer" class="form-control" id="composer" placeholder="Composer (ex:JL/PM)" required>
-  </div>
-
-  <div class="form-group">
-    <label for="songLength">Song Length</label>
-    <input type="number" ng-model="song.songLength" class="form-control" id="songLength" placeholder="Song Length" required>
-  </div>
-
-  <div class="form-group">
-    <label for="billboard100">Billboard 100</label>
-    <input type="checkbox" ng-model="song.billboard100">  <br> Check if yes
-  </div>
-
-  <p>Once your changes have been made, click the submit button</p>
-  <button type="submit" ng-click="postSong()" class="btn btn-default">Submit</button>
-</form>  <!-- Closes the Enter a new song section -->
+  <body ng-controller="songController">
 
 
 
-<div class="message-section">
-  </div>
-  <div class="song-section">
-    <h2 class="text-center"></h2>
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Song Title</th>
-          <th>Composer</th>
-          <th>Song Length</th>
-        </tr>
-      </thead>
-      <tbody id="songs">
-       <tr ng-repeat='song in songs'>
-          <td>{{song.songTitle}}</td>
-          <td>{{song.composer}}</td>
-          <td>{{song.songLength}}</td>
-          <td class='text-right'>
-            <button ng-click="editSong(song._id)" class='btn btn-primary'><span class='glyphicon glyphicon-pencil'></span></button>
-            <button ng-click="deleteSong(song._id)" class='btn btn-danger'><span
-<!-- (song._id is a great efficient way to do this because when you create a new song, the database assigns each one with an underscore id (_id)) -->
 
-         <span class='glyphicon glyphicon-remove'></span></button>
-            </td>
-        </tr>
-      </tbody>
-    </table>
-    <form>
-  <div class="form-group">
-    <label>Song Name</label>
-    <input ng-model='newName'type="text" class="form-control" id="songTitle" placeholder="Song Title" required>
-  </div>
-  <div class="form-group">
-    <label>Composer</label>
-    <input ng-model='newType' type="text" class="form-control" id="composer" placeholder="Composer (ex:Lennon/McCartney)" required>
-  </div>
-  <div class="form-group">
-    <label>Song Length</label>
-    <input ng-model='newAbv' type="number" step="0.1" class="form-control" id="songLength" placeholder="Song Length" required>
-  </div>
-  <button ng-click='editsong(song.name)' type="submit" class="btn btn-default" required>Update</button>
-</form>
-  </div>
-  </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/app.js"></script>
-    <script type="text/javascript" src="js/services.js"></script>
-    <script type="text/javascript" src="js/controllers.js"></script>
-    <script type="text/javascript" src="js/directives.js"></script>
-    <script type="text/javascript" src="js/filters.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
+    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-route.js"></script>
+
+    <script src="/js/app.js" type="text/javascript"></script>
+    <script src="/js/controller.js" type="text/javascript"></script>
+    <script src="/js/directives.js" type="text/javascript"></script>
+    <script src="/js/filters.js" type="text/javascript"></script>
+    <script src="/js/services.js" type="text/javascript"></script>
 
   </body>
 </html>
@@ -113,10 +31,23 @@
 
 
 
-<!-- NEXT STEPS -->
-<!-- edit and delete songs -->
+
+
+<body>
 
 
 
-<!-- QUESTIONS -->
-<!-- I want to make a change in my Schema -->
+
+<script type="text/javascript" src="config.json"></script>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+
+
+</body>
+
+</html>
+
+
+
