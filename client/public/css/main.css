@@ -9,6 +9,11 @@ a {
 h1 {
   text-align: center;
 }
+
+h3 {
+  text-align: center;
+}
+
 .image-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -18,3 +23,6 @@ h1 {
   flex: 1 1 auto;
 }
 
+.earlyAndSolo img {
+  opacity: .04;
+}
