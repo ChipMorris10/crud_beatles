@@ -8,6 +8,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+
 // *** routes *** //
 var routes = require('./routes/index.js');
 var songs = require('./routes/api.js');
@@ -41,8 +42,6 @@ app.get('/',function(req,res){
 // app.use('/', routes);
 app.use('/api/', songs);
 // app.post('/api/songs', services.postSong);
-
-
 
 
 // catch 404 and forward to error handler

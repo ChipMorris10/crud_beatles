@@ -1,5 +1,4 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -10,3 +9,12 @@ a {
 h1 {
   text-align: center;
 }
+.image-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.image-wrapper img {
+  flex: 1 1 auto;
+}
+

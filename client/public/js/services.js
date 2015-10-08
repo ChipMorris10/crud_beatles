@@ -1,8 +1,5 @@
-// *************************
-// is this set up properly?
-// *************************
-
-app.factory("songFactory", ['$http', function($http){
+angular.module('myApp')
+.factory("songFactory", ['$http', function($http){
   var object = {};
 
   // get all request
