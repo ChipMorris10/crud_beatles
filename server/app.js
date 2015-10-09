@@ -30,10 +30,12 @@ app.use(express.static(path.join(__dirname, '../client/public')));
 ///view engine
 app.set('view engine', 'html');
 
-
 // *** static directory *** //
  app.set('views', path.join(__dirname, '../client/views'));
 
+app.get('/songEntry',function(req,res){
+  res.sendFile(path.join(__dirname,'../client/views','song_entry.html'));
+});
 app.get('/',function(req,res){
   res.sendFile(path.join(__dirname,'../client/views','index.html'));
 });

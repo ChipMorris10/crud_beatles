@@ -23,6 +23,19 @@ h3 {
   flex: 1 1 auto;
 }
 
-.earlyAndSolo img {
+
+.cover {
   opacity: .04;
+  font-family: Hoefler Text,Baskerville Old Face,Garamond,Times New Roman,serif;
 }
+
+/*Questions*/
+/*Why can't I edit the picture in dev tools?
+- .cover isn't working
+- looking for a good font for the years
+- want the years down at the bottom of the cover
+
+
+
+
+*/

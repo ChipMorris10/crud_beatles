@@ -1,12 +1,12 @@
 angular.module('myApp')
 .controller('songController', ['$scope', 'songFactory', function($scope, songFactory) {
-// DO I NEED $http? I'm not certain what that does
 
 // app.controller refers to app.js (var app = angular.module('myApp', []);)
 // songFactory is also in the services.js file. It's simply a variable name
 // $scope.songs is connecting the controller with the index.html(view) and now it's set to an empty object
 
-$scope.song = {};
+$scope.songs = {};
+$scope.albumYear = {};
 
 $scope.getSongs = function(url) {
   songFactory.getSongs(url)
@@ -14,6 +14,8 @@ $scope.getSongs = function(url) {
     $scope.songs = response.data;
   });
 };
+
+$scope.getSongs('api/songs');
 
 // Post a song
 $scope.postSong = function() {
@@ -25,7 +27,6 @@ $scope.postSong = function() {
     console.log("response data", response.data);
   });
 };
-
 
 
 // Edit a song

@@ -11,6 +11,7 @@ angular.module('myApp')
   object.getSong = function() {
     return $http.get('api/song');
   };
+
   //post request
   object.postSong = function(payload){
     console.log("http", payload);

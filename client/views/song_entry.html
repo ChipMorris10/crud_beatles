@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>The Beatles Song Catalog - Official and Otherwise</title>
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../public/css/main.css">
+    <link rel="stylesheet" href="/css/main.css">
 
   </head>
   <body>
@@ -36,9 +36,19 @@
   </div>
 
   <div class="form-group">
+    <label for="albumTitle">Album Title</label>
+    <input type="number" ng-model="song.albumTitle" class="form-control" id="albumTitle" placeholder="Album Title" required>
+  </div>
+
+  <div class="form-group">
+    <label for="albumYear">Year Released</label>
+    <input type="number" ng-model="song.albumYear" class="form-control" id="albumYear" placeholder="Year Released" required>
+  </div>
+
+  <!-- <div class="form-group">
     <label for="songLength">Song Length</label>
     <input type="number" ng-model="song.songLength" class="form-control" id="songLength" placeholder="Song Length" required>
-  </div>
+  </div> -->
 
   <div class="form-group">
     <label for="billboard100">Billboard 100</label>
@@ -55,19 +65,26 @@
   </div>
   <div class="song-section">
     <h2 class="text-center"></h2>
+    <span>Ordered By: {{orderByField}}, Reverse Sort: {{reverseSort}}</span>
     <table class="table">
       <thead>
         <tr>
-          <th>Song Title</th>
-          <th>Composer</th>
-          <th>Song Length</th>
+          <th>
+            <button ng-click="orderByField='songTitle'; reverseSort = !reverseSort">Song Title</button></th>
+          <th>
+            <button ng-click="orderByField='composer'; reverseSort = !reverseSort">Composer</th>
+          <th>
+            <button ng-click="orderByField='albumTitle'; reverseSort = !reverseSort">Album Title</th>
+          <th>
+            <button ng-click="orderByField='albumYear'; reverseSort = !reverseSort">Year Released</th>
         </tr>
       </thead>
       <tbody id="songs">
-       <tr ng-repeat='song in songs'>
+       <tr ng-repeat='song in songs | orderBy:orderByField:reverseSort'>
           <td>{{song.songTitle}}</td>
           <td>{{song.composer}}</td>
-          <td>{{song.songLength}}</td>
+          <td>{{song.albumTitle}}</td>
+          <td>{{song.albumYear}}
           <td class='text-right'>
             <button ng-click="editSong(song._id)" class='btn btn-primary'><span class='glyphicon glyphicon-pencil'></span></button>
             <button ng-click="deleteSong(song._id)" class='btn btn-danger'><span
@@ -96,15 +113,15 @@
   </div>
   </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/app.js"></script>
-    <script type="text/javascript" src="js/services.js"></script>
-    <script type="text/javascript" src="js/controllers.js"></script>
-    <script type="text/javascript" src="js/directives.js"></script>
-    <script type="text/javascript" src="js/filters.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="/js/app.js"></script>
+    <script type="text/javascript" src="/js/services.js"></script>
+    <script type="text/javascript" src="/js/controllers.js"></script>
+    <script type="text/javascript" src="/js/directives.js"></script>
+    <script type="text/javascript" src="/js/filters.js"></script>
+    <script type="text/javascript" src="/js/main.js"></script>
 
   </body>
 </html>
