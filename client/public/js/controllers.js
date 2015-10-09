@@ -15,7 +15,7 @@ $scope.getSongs = function(url) {
   });
 };
 
-$scope.getSongs('api/songs');
+$scope.getSongs();
 
 // Post a song
 $scope.postSong = function() {
@@ -24,26 +24,27 @@ $scope.postSong = function() {
   songFactory.postSong(payload)
   .then(function(response) {
     $scope.songs.push(response.data);
-    console.log("response data", response.data);
+    $scope.getSongs ();
   });
 };
 
 
 // Edit a song
-$scope.editSong = function(id) {
-  var payload = $scope.songEdit;
-  songFactory.putSong(id, payload)
-  .then(function(response) {
-    $scope.songs.push(response.data);
-  });
-  getSongs('api/songs');
+$scope.editSong = function(song) {
+  $scope.songedit = song;
+  // var payload = $scope.songEdit;
+  // songFactory.putSong(id, payload)
+  // .then(function(response) {
+  //   $scope.songs.push(response.data);
+  // });
+  //   $scope.getSongs();
 };
 
 // Delete a song
 $scope.deleteSong = function(id) {
   songFactory.deleteSong(id)
   .then(function(response) {
-    getSongs('api/songs');
+    $scope.getSongs();
   });
 };
 

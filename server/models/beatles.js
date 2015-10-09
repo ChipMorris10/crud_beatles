@@ -5,8 +5,6 @@ var Song = new Schema({
     songTitle: String,
     songLength: Number,
     composer: String,
-    leadVocals: String,     // ADD
-    billboard100: Boolean, // REMOVE
     albumTitle: String,
     albumYear: Number,
 });

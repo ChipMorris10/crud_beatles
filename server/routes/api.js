@@ -22,13 +22,9 @@ router.get('song/:id', function(req, res, next){
 
 // Post one
 router.post('/songs', function(req, res, next){
-  console.log("Req.body",req)
-  new Song ({
-    songTitle: req.body.songTitle,
-    songLength: req.body.songLength,
-    composer: req.body.composer,
-    billboard100: req.body.billboard100
-})
+  new Song (
+    req.body
+)
   .saveQ()
     .then(function(result){res.json(result)})
     .fail(function(err){res.send(err)})
