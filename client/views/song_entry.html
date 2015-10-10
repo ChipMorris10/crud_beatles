@@ -7,28 +7,29 @@
   <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
+<!-- <img class="dropTLogo" src="../../artwork/artwork_band/dropTLogo.png" alt="The Beatles"> -->
   <div ng-controller="songController" class="container">    <!-- Same name that's in controllers.js -->
   <!-- Enter a New Song -->
   <form>
     <h2>Enter a song to add to the collection</h2>
     <div class="form-group">
       <label for="songTitle">Song Title</label>
-      <input type="text" ng-model="song.songTitle" class="form-control" id="songTitle" placeholder="Song Title" required>
+      <input type="text" ng-model="song.songTitle" class="form-control" id="songTitle" placeholder="Song Title">
     </div>
     <div class="form-group">
       <label for="composer">Composer</label>
-      <input type="text" ng-model="song.composer" class="form-control" id="composer" placeholder="Composer (ex:JL/PM)" required>
+      <input type="text" ng-model="song.composer" class="form-control" id="composer" placeholder="Composer (ex:JL/PM)">
     </div>
     <div class="form-group">
       <label for="albumTitle">Album Title</label>
-      <input type="text" ng-model="song.albumTitle" class="form-control" id="albumTitle" placeholder="Album Title" required>
+      <input type="text" ng-model="song.albumTitle" class="form-control" id="albumTitle" placeholder="Album Title">
     </div>
     <div class="form-group">
       <label for="albumYear">Year Released</label>
-      <input type="number" ng-model="song.albumYear" class="form-control" id="albumYear" placeholder="Year Released" required>
+      <input type="number" ng-model="song.albumYear" class="form-control" id="albumYear" placeholder="Year Released">
     </div>
     <p>Once your changes have been made, click the submit button</p>
-    <button type="submit" ng-click="postSong(); reset-Form" class="btn btn-default">Submit</button>
+    <button type="submit" ng-click="postSong(); resetForm()" class="btn btn-default">Submit</button>
 
 <div class="message-section">
   </div>
