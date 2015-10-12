@@ -16,6 +16,18 @@ h3 {
   text-align: center;
 }
 
+.albums {
+  border-style: solid;
+  border-width: 1px;
+  width: 472px;
+}
+
+.yearSoloBootleg {
+  border-style: solid;
+  border-width: 1px;
+  width: 472px;
+}
+
 /*.image-wrapper {
   display: flex;
   flex-wrap: wrap;

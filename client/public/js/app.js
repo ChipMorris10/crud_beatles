@@ -1,5 +1,5 @@
 // This points to index.html
-var app = angular.module('myApp', ['ngRoute']);
+var app = angular.module('myApp', []);
 
 // app.config(function ($routeProvider) {
 //   $routeProvider

@@ -7,6 +7,7 @@ var Song = new Schema({
     composer: String,
     albumTitle: String,
     albumYear: Number,
+    comments: String,
 });
 
 mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost/songs');

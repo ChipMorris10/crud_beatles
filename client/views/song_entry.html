@@ -28,6 +28,10 @@
       <label for="albumYear">Year Released</label>
       <input type="number" ng-model="song.albumYear" class="form-control" id="albumYear" placeholder="Year Released">
     </div>
+   <!--  <div class="form-group">
+      <label for="comments">Comments</label>
+      <input type="text" ng-model="song.comments" class="form-control" id="comments" placeholder="Comments">
+    </div> -->
     <p>Once your changes have been made, click the submit button</p>
     <button type="submit" ng-click="postSong(); resetForm()" class="btn btn-default">Submit</button>
 
@@ -48,6 +52,8 @@
             <button ng-click="orderByField='albumTitle'; reverseSort = !reverseSort">Album Title</th>
           <th>
             <button ng-click="orderByField='albumYear'; reverseSort = !reverseSort">Year Released</th>
+          <th>
+            <button ng-click="orderByField='comments'; reverseSort = !reverseSort">Comment
         </tr>
       </thead>
       <tbody id="songs">
@@ -56,6 +62,7 @@
           <td>{{song.composer}}</td>
           <td>{{song.albumTitle}}</td>
           <td>{{song.albumYear}}
+          <td>{{song.comments}}</td>
           <td class='text-right'>
             <button ng-click="editSong(song)" class='btn btn-primary'><span class='glyphicon glyphicon-pencil'></span></button>
             <button ng-click="deleteSong(song._id)" class='btn btn-danger'><span
@@ -92,11 +99,11 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src ="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
-    <script type="text/javascript" src="/js/app.js"></script>
-    <script type="text/javascript" src="/js/services.js"></script>
-    <script type="text/javascript" src="/js/controllers.js"></script>
-    <script type="text/javascript" src="/js/directives.js"></script>
-    <script type="text/javascript" src="/js/filters.js"></script>
+    <script type="text/javascript" src="../js/app.js"></script>
+    <script type="text/javascript" src="../js/services.js"></script>
+    <script type="text/javascript" src="../js/controllers.js"></script>
+    <script type="text/javascript" src="../js/directives.js"></script>
+    <script type="text/javascript" src="../js/filters.js"></script>
     <script type="text/javascript" src="/js/main.js"></script>
 
   </body>
