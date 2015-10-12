@@ -8,6 +8,7 @@ var Song = new Schema({
     albumTitle: String,
     albumYear: Number,
     comments: String,
+    authorizedRelease: Boolean,
 });
 
 mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost/songs');

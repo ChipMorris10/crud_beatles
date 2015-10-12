@@ -62,20 +62,22 @@ $scope.deleteSong = function(id) {
 }]);             // close app.songs controller
 
 app.controller('homeController', ['$scope', function ($scope){
+  $scope.albumName = "";
   $scope.songList = false;
   $scope.albumGrid = true;
+
   $scope.showSongs = function($event){
-    console.log($event);
-    var elem = angular.element($event.srcElement);
-    console.log(elem);
-    console.log(elem.attr('class'));
-    console.log(elem.attr('alt'));
-    $scope.songList = true;
+    $scope.albumName = $event.target.alt;
+    $scope.songList = !$scope.songList;
     $scope.albumGrid = false;
-  }
-  $scope.hideSongs = function() {
+  };
+
+  $scope.hideSongs = function($event) {
     // write logic here
-    $scope.songList = false;
-    $scope.albumGrid = true;
-  }
+    // <button ng-click="toggle()">Toggle</button>
+    $scope.songList = !$scope.songList;
+    $scope.albumGrid = !$scope.albumGrid;
+    console.log($scope.songList);
+  };
+
 }]);
