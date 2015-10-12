@@ -7,30 +7,31 @@
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="./css/main.css">
   </head>
-  <body ng-app="myApp">
+  <body ng-app="myApp" ng-controller='homeController'>
     <div class="container-fluid">
       <beatles-header></beatles-header>
     </div>
-    <div class="container">
+    <div class="row" ng-show='albumGrid'>
 
       <div id="mid-section" class=" ">
 
-      <div id="albums" class="col-md-6">
+      <div id="albums" class="col-md-6" ng-click='showSongs($event)'>
         <beatles-albums></beatles-albums>
       </div>
 
-        <!-- <div id="songs" class="col-md-4">
-          <beatles-songs></beatles-songs>
-        </div> -->
 
-        <div id="earlyAndSolo" class="col-md-6">
+        <div id="earlyAndSolo" class="col-md-6" ng-click='showSongs()'>
           <beatles-years></beatles-years>
         </div>
       </div>
     </div>
-    <!-- <div class="container-fluid">
 
-    </div> -->
+    <div class="row" ng-show='songList'>
+      <div id="songs" class="col-md-12" ng-controller="songController">
+        <beatles-songs></beatles-songs>
+      </div>
+    </div>
+
     <div ng-controller="songController"></div>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>

@@ -1,5 +1,6 @@
-angular.module('myApp')
-.controller('songController', ['$scope', 'songFactory', function($scope, songFactory) {
+var app = angular.module('myApp');
+
+app.controller('songController', ['$scope', 'songFactory', function($scope, songFactory) {
 
 // app.controller refers to app.js (var app = angular.module('myApp', []);)
 // songFactory is also in the services.js file. It's simply a variable name
@@ -58,4 +59,23 @@ $scope.deleteSong = function(id) {
 
 
 
-}]);             // close app.controller
+}]);             // close app.songs controller
+
+app.controller('homeController', ['$scope', function ($scope){
+  $scope.songList = false;
+  $scope.albumGrid = true;
+  $scope.showSongs = function($event){
+    console.log($event);
+    var elem = angular.element($event.srcElement);
+    console.log(elem);
+    console.log(elem.attr('class'));
+    console.log(elem.attr('alt'));
+    $scope.songList = true;
+    $scope.albumGrid = false;
+  }
+  $scope.hideSongs = function() {
+    // write logic here
+    $scope.songList = false;
+    $scope.albumGrid = true;
+  }
+}]);

@@ -8,7 +8,8 @@
 </head>
 <body>
 <!-- <img class="dropTLogo" src="../../artwork/artwork_band/dropTLogo.png" alt="The Beatles"> -->
-  <div ng-controller="songController" class="container">    <!-- Same name that's in controllers.js -->
+  <div ng-controller="songController" class="container">
+  <!-- Same name that's in controllers.js -->
   <!-- Enter a New Song -->
   <form>
     <h2>Enter a song to add to the collection</h2>
@@ -28,10 +29,10 @@
       <label for="albumYear">Year Released</label>
       <input type="number" ng-model="song.albumYear" class="form-control" id="albumYear" placeholder="Year Released">
     </div>
-   <!--  <div class="form-group">
+    <div class="form-group">
       <label for="comments">Comments</label>
       <input type="text" ng-model="song.comments" class="form-control" id="comments" placeholder="Comments">
-    </div> -->
+    </div>
     <p>Once your changes have been made, click the submit button</p>
     <button type="submit" ng-click="postSong(); resetForm()" class="btn btn-default">Submit</button>
 
