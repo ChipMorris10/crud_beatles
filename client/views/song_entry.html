@@ -17,24 +17,42 @@
       <label for="songTitle">Song Title</label>
       <input type="text" ng-model="song.songTitle" class="form-control" id="songTitle" placeholder="Song Title">
     </div>
+
     <div class="form-group">
       <label for="composer">Composer</label>
       <input type="text" ng-model="song.composer" class="form-control" id="composer" placeholder="Composer (ex:JL/PM)">
     </div>
+
     <div class="form-group">
       <label for="albumTitle">Album Title</label>
       <input type="text" ng-model="song.albumTitle" class="form-control" id="albumTitle" placeholder="Album Title">
     </div>
+
     <div class="form-group">
       <label for="albumYear">Year Released</label>
-      <input type="number" ng-model="song.albumYear" class="form-control" id="albumYear" placeholder="Year Released">
+      <input type="number" ng-model="song.albumYear" class="form-control" id="albumYear"
+      placeholder="Year Released">
+
     </div>
+
+    <!-- <div class="form-group">
+      <label for="comments"></label> -->
+      <!-- <input type="text" ng-model="song.comments" class="form-control" id="comments" placeholder="Comments"> -->
+      <!-- <textarea rows="4" cols="50" name="Comments" form="usrform">Comments</textarea><br>
+    </div> -->
+
     <div class="form-group">
       <label for="comments">Comments</label>
       <input type="text" ng-model="song.comments" class="form-control" id="comments" placeholder="Comments">
     </div>
+
+    <div class="form-group">
+      <label for="authorizedRelease">Check if not an authorized release</label>
+      <input type="checkbox">
+    </div>
+
     <p>Once your changes have been made, click the submit button</p>
-    <button type="submit" ng-click="postSong(); resetForm()" class="btn btn-default">Submit</button>
+    <button type="submit" ng-click="postSong(); resetForm()" class="btn btn-primary">Submit</button>
 
 <div class="message-section">
   </div>
@@ -67,7 +85,7 @@
           <td class='text-right'>
             <button ng-click="editSong(song)" class='btn btn-primary'><span class='glyphicon glyphicon-pencil'></span></button>
             <button ng-click="deleteSong(song._id)" class='btn btn-danger'><span
-<!-- (song._id is a great efficient way to do this because when you create a new song, the database assigns each one with an underscore id (_id)) -->
+<!-- (song._id is an efficient way to do this because when you create a new song, the database assigns each one with an underscore id (_id)) -->
 
          <span class='glyphicon glyphicon-remove'></span></button>
             </td>
@@ -75,22 +93,27 @@
       </tbody>
     </table>
     <form>
+
   <div class="form-group">
     <label>Song Name</label>
     <input ng-model='songedit.songTitle'type="text" class="form-control" id="songTitle" placeholder="Song Title" required>
   </div>
+
   <div class="form-group">
     <label>Composer</label>
     <input ng-model='songedit.composer' type="text" class="form-control" id="composer" placeholder="Composer (ex:Lennon/McCartney)" required>
   </div>
+
   <div class="form-group">
     <label>Album Title</label>
     <input ng-model='songedit.albumTitle' type="text" class="form-control" id="albumTitle" placeholder="Album Title" required>
   </div>
+
   <div>
   <label>Album Year</label>
     <input ng-model='songedit.albumYear' type="text" class="form-control" id="albumYear" placeholder="Album Title" required>
   </div>
+
   <button ng-click='editsong(song.name)' type="submit" class="btn btn-default" required>Update</button>
 </form>
   </div>
@@ -116,9 +139,5 @@
 
 <!-- NEXT STEPS -->
 <!-- edit and delete songs -->
-<!-- enter new songs but Album and Year aren't showing up -->
 
 
-
-<!-- QUESTIONS -->
-<!-- I want to make a change in my Schema -->

@@ -57,27 +57,25 @@ $scope.deleteSong = function(id) {
 //   });
 // };
 
+}]); // close app.songs controller
 
-
-}]);             // close app.songs controller
 
 app.controller('homeController', ['$scope', function ($scope){
   $scope.albumName = "";
   $scope.songList = false;
   $scope.albumGrid = true;
 
+  // function to show songs when an album conver is clicked
   $scope.showSongs = function($event){
     $scope.albumName = $event.target.alt;
     $scope.songList = !$scope.songList;
     $scope.albumGrid = false;
   };
 
+  // function to hide songs when the button is clicked
   $scope.hideSongs = function($event) {
-    // write logic here
-    // <button ng-click="toggle()">Toggle</button>
     $scope.songList = !$scope.songList;
     $scope.albumGrid = !$scope.albumGrid;
-    console.log($scope.songList);
   };
 
-}]);
+}]);  // close homeController
