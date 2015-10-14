@@ -1,5 +1,3 @@
-var app = angular.module('myApp');
-
 app.controller('songController', ['$scope', 'songFactory', function($scope, songFactory) {
 
 // app.controller refers to app.js (var app = angular.module('myApp', []);)

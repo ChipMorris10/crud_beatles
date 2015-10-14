@@ -1,5 +1,4 @@
-angular.module('myApp')
-.factory("songFactory", ['$http', function($http){
+app.factory("songFactory", ['$http', function($http){
   var object = {};
 
   // get all request
