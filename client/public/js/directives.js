@@ -1,3 +1,12 @@
+// **************************************** //
+//                                          //
+// These are all injected in at index.html  //
+// <beatles-years><beatles-albums>          //
+// <beatles-years><beatles-songs>           //
+// <beatles-years><beatles-years>           //
+// **************************************** //
+
+
 app.directive('beatlesAlbums', function() {
   return {
     restrict: 'E',
@@ -28,3 +37,4 @@ app.directive('beatlesHeader', function() {
     templateUrl:'/html_templates/header.html'
   };
 });
+

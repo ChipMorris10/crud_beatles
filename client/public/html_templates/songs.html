@@ -2,10 +2,19 @@
 <button ng-click='hideSongs()'><span class="glyphicon glyphicon-remove"></span>Go Back</button>
 <table>
   <tbody id="songs">
-  <!-- find a way to filter by Album Title Only -->
     <tr ng-repeat='song in songs | filter: albumName'>
       <td>{{song.songTitle}}</td>
     </tr>
   </tbody>
 </table>
 
+
+
+
+<!--
+
+hideSongs() comes js/controllers.js and homeController $scope.hideSongs()
+albumName comes from js/controllers.js homeController $scope.albumName()
+song in songs - 'songs' comes from js/controllers.js and songController
+
+-->

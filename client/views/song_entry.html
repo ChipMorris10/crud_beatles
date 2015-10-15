@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="myApp">   <!-- This points to app.js on the Client side -->
+<html ng-app="myApp">   <!-- This points to server/routes/app.js. Client side -->
 <head>
   <meta charset="utf-8">
   <title>The Beatles Song Catalog - Official and Otherwise</title>
@@ -7,10 +7,15 @@
   <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
-<!-- <img class="dropTLogo" src="../../artwork/artwork_band/dropTLogo.png" alt="The Beatles"> -->
   <div ng-controller="songController" class="container">
   <!-- Same name that's in controllers.js -->
-  <!-- Enter a New Song -->
+
+
+  <!-- **********************
+       *  Enter a New Song  *
+       **********************
+  -->
+
   <form>
     <h2>Enter a song to add to the collection</h2>
     <div class="form-group">
@@ -32,8 +37,17 @@
       <label for="albumYear">Year Released</label>
       <input type="number" ng-model="song.albumYear" class="form-control" id="albumYear"
       placeholder="Year Released">
-
     </div>
+
+
+    <!--
+    *********************************
+      I want to use this eventually
+       for my comment box and then
+      I'll remove the lines of code
+                 below
+    *********************************
+     -->
 
     <!-- <div class="form-group">
       <label for="comments"></label> -->
@@ -58,7 +72,6 @@
   </div>
   <div class="song-section">
     <h2 class="text-center"></h2>
-    <!-- <span>Ordered By: {{orderByField}}, Reverse Sort: {{reverseSort}}</span> -->
     <table class="table">
       <thead>
         <input type="text" ng-model="songSearchText">
@@ -85,7 +98,6 @@
           <td class='text-right'>
             <button ng-click="editSong(song)" class='btn btn-primary'><span class='glyphicon glyphicon-pencil'></span></button>
             <button ng-click="deleteSong(song._id)" class='btn btn-danger'><span
-<!-- (song._id is an efficient way to do this because when you create a new song, the database assigns each one with an underscore id (_id)) -->
 
          <span class='glyphicon glyphicon-remove'></span></button>
             </td>
@@ -130,10 +142,8 @@
 </html>
 
 
+<!-- (song._id is an efficient way to do this because when you create a new song, the database assigns each one with an underscore id (_id)) -->
 
-
-
-<!-- NEXT STEPS -->
-<!-- edit and delete songs -->
+<!-- <img class="dropTLogo" src="../../artwork/artwork_band/dropTLogo.png" alt="The Beatles"> -->
 
 
