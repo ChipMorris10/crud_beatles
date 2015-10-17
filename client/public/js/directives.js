@@ -38,3 +38,10 @@ app.directive('beatlesHeader', function() {
   };
 });
 
+app.directive('index.html', function() {
+  return {
+    restrict: 'E',
+    templateUrl:"../views/index.html"
+  };
+});
+
